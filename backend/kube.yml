@@ -1,0 +1,155 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user
+  template:
+    metadata:
+      labels:
+        app: user
+    spec:
+      containers:
+      - name: user
+        image: kube/user_api_service
+        ports:
+        - containerPort: 8001
+        imagePullPolicy: Never
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: user
+  labels:
+    app: user
+spec:
+  ports:
+  - port: 8001
+    targetPort: 8001
+  selector:
+    app: user
+  type: LoadBalancer
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: learner
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: learner
+  template:
+    metadata:
+      labels:
+        app: learner
+    spec:
+      containers:
+      - name: learner
+        image: kube/learner_api_service
+        ports:
+        - containerPort: 8002
+        imagePullPolicy: Never
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: learner
+  labels:
+    app: learner
+spec:
+  ports:
+  - port: 8002
+    targetPort: 8002
+  selector:
+    app: learner
+  type: LoadBalancer
+   
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enroll
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enroll
+  template:
+    metadata:
+      labels:
+        app: enroll
+    spec:
+      containers:
+      - name: enroll
+        image: kube/enroll_api_service
+        ports:
+        - containerPort: 8003
+        imagePullPolicy: Never
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: enroll
+  labels:
+    app: enroll
+spec:
+  ports:
+  - port: 8003
+    targetPort: 8003
+  selector:
+    app: enroll
+  type: LoadBalancer
+  
+ 
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: course
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: course
+  template:
+    metadata:
+      labels:
+        app: course
+    spec:
+      containers:
+      - name: course
+        image: kube/course_api_service
+        ports:
+        - containerPort: 8004
+        imagePullPolicy: Never
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: course
+  labels:
+    app: course
+spec:
+  ports:
+  - port: 8004
+    targetPort: 8004
+  selector:
+    app: course
+  type: LoadBalancer
+  
