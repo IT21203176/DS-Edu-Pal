@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "2a452809-9c79-49d6-a6cc-21e69db223a9",
+		"name": "course",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26303845"
+	},
+	"item": [
+		{
+			"name": "addCourse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sample Course\",\r\n    \"lec1\": \"Lecture 1 details\",\r\n    \"lec2\": \"Lecture 2 details\",\r\n    \"lec3\": \"Lecture 3 details\",\r\n    \"price\": 49.99,\r\n    \"video_link\": \"https://example.com/video\",\r\n    \"quiz_details\": \"Quiz details here\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8004/Course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8004",
+					"path": [
+						"Course"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCourses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8004/Course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8004",
+					"path": [
+						"Course"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCourseById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8004/Course/6641c96662be977b434e55ed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8004",
+					"path": [
+						"Course",
+						"6641c96662be977b434e55ed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8004/Course/6641c96662be977b434e55ed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8004",
+					"path": [
+						"Course",
+						"6641c96662be977b434e55ed"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

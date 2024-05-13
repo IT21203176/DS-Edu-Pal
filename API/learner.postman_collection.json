@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "0f9f2bb5-7f81-40ba-8a36-b5e819ce865d",
+		"name": "learner",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26303845"
+	},
+	"item": [
+		{
+			"name": "addLearner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"course_id\": \"6642364ddfaf06284262221b\",\r\n    \"user_id\": \"664225093f3689935d479232\",\r\n    \"lec1\": true,\r\n    \"lec2\": false,\r\n    \"lec3\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/Learner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"Learner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDataById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/Learner/6641cc3312f121e6a6564a9b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"Learner",
+						"6641cc3312f121e6a6564a9b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/Learner/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"Learner",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/Learner/6641cc3312f121e6a6564a9b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"Learner",
+						"6641cc3312f121e6a6564a9b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/Learner/status/6641eb732e366c17f8941a69/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"Learner",
+						"status",
+						"6641eb732e366c17f8941a69",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
