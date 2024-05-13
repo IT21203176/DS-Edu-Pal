@@ -33,14 +33,15 @@ For Email sending used NodeMailer.
 3. Open `backend' and 'frontend' folders two seperate windows in VisualStudio Code.
 4. In backend folder navigate to the four directories which named as 'Course', 'Enroll', 'Learner' and 'User' in four seperate terminals. Then in each terminal provide with the below command:
    `nodemon`
-5. Inside every service folder ('Course', 'Enroll', 'Learner' and 'User') there is a file named as `db.js`. Change the mongoDB url in there to your 'url'.
-6. In frontend folder, navigate into the 'frontend' directory in the terminal.
-7. Install dependencies by running the command:
+5. Inside every service folder ('Course', 'Enroll', 'Learner' and 'User') there is a file named as `db.js`. Change the mongoDB url in there to your `url`.
+6. If it display a server error you should need to add your `current IP Address` to the MongoDB Cluster.
+7. In frontend folder, navigate into the 'frontend' directory in the terminal.
+8. Install dependencies by running the command:
    `npm i --legacy-peer-deps`
-8. Start the frontend by running the command:
+9. Start the frontend by running the command:
   `npm start`
-9. Before runnin to the docker commands ensure inside the `Dockerfile` the node version is similar to your currrent node version.
-10. Once again in backend folder navigate to the four directories which named as 'Course', 'Enroll', 'Learner' and 'User' in four seperate terminals.
+10. Before runnin to the docker commands ensure inside the `Dockerfile` the node version is similar to your currrent node version.
+11. Once again in backend folder navigate to the four directories which named as 'Course', 'Enroll', 'Learner' and 'User' in four seperate terminals.
     Provide below commands to create the docker image for each service.
     
     `docker build -t kube/user_api_service .`
